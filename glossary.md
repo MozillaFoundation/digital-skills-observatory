@@ -6,4 +6,5 @@
 * __Feature Phone__: A mobile phone with more features than a standard cellphone but not equivalent to a smart phone. Apart from voice calling and text messaging functionality, they also offer basic multimedia and Internet capabilities.
 * __Dumb Phone__: A basic cellphone lacking any advanced functionality characteristic of feature and/or smart phones.
 * __MPESA__: A mobile phone-based money transfer, financing and microfinancing service that is run by Vodafone and Safaricom Ltd. within Kenya, Tanzania, Afghanistan, South Africa, India and Eastern Europe.
+* __MSHWARI__: A mobile banking service that is offered by Safaricom Ltd. where customers can save money, earn interest on savings and access loan services.
 
