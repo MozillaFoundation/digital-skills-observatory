@@ -16,7 +16,7 @@
 
 * __Randomized control trial (RCF)__: (or randomized controlled trial) is a study design that randomly assigns participants into an experimental group or a control group. In this particular project, the experiment group shall be trained on how to use their smartphone in a series of workshops. The control group will however not be trained on anything. At the end of the study, we shall compare the differences between the two groups and make conclusions on whether we think the workshops had any effect or not.
 
-* __User-centred design__: User requirements are considered right from the beginning and included into the whole product cycle. These requirements are noted and refined through investigative methods including: ethnographic study, contextual inquiry, prototype testing, usability testing and other methods.
+* __User-centred design__: User requirements are considered right from the beginning and included into the whole product cycle. These requirements are noted and refined through investigative methods including: ethnographic study, contextual inquiry, prototype testing, usability testing and other methods. https://vimeo.com/106505300 to learn more. 
 
 * __Intervention__: The stuff that will be done on one group of the participants also known as a treament in research lingo. This could be a workshop to teach new smartphone owners about functionalities of the smartphones etc.
 
