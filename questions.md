@@ -12,3 +12,8 @@
 11. What is the route to discovery of uses outside of social media e.g. do people discover the web via links they receive in social media?
 12. Are digital skills more / less / equally important than financial skills when it comes to the adoption of DFS? i.e. digital literacy vs. financial literacy
 13. Does gender have an effect in the use of different applications in smartphones?
+
+
+###Crowd Sourced Questions
+
+14. After your first experience with smartphone do you intend to continue using a smartphone or you think you are better off using a feature phone?
