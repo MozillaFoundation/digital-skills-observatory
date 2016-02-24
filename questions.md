@@ -15,7 +15,7 @@
 13. Does gender have an effect in the use of different applications in smartphones?
 
 ###Gender questions
-1) Women tend to have less access to education and lower literacy rates, how does this effect smartphone use?
-2) Do women make independent decisions to purchase smartphones, or do the rely on men (husbands, father etc.) to provide money and/or permission to purchase? Does the cost of a smartphone in particular prevent women from purchasing or making independent purchases?
-3) Do men have access to women's phones (e.g. can they read their texts, know who the called, etc.)?
-4) Do women make or have a say in *financial decisions* within their families? *How does this impact the use of DFS?*
+1. Women tend to have less access to education and lower literacy rates, how does this effect smartphone use?
+2. Do women make independent decisions to purchase smartphones, or do the rely on men (husbands, father etc.) to provide money and/or permission to purchase? Does the cost of a smartphone in particular prevent women from purchasing or making independent purchases?
+3. Do men have access to women's phones (e.g. can they read their texts, know who the called, etc.)?
+4. Do women make or have a say in *financial decisions* within their families? *How does this impact the use of DFS?*
