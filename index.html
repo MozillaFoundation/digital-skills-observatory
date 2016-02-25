@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digital Skills Observatory</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var backgroundDiv = document.querySelector('#background');
+
+        var backgroundImages = [
+          'images/24038854104_f033c2cd42_k.jpg',
+          'images/24371456450_4dea541e00_k.jpg',
+          'images/24549348272_dde12d1dca_k.jpg',
+          'images/24640877256_6e06ddc746_k.jpg',
+          'images/24667023715_ae6c536743_k.jpg',
+          'images/24667116615_679cc211f9_k.jpg'
+        ];
+
+        var backgroundImageIndex = Math.floor(Math.random()*backgroundImages.length);
+
+        function nextBackgroundImage() {
+          backgroundImageIndex = (backgroundImageIndex + 1) % backgroundImages.length;
+          backgroundDiv.style.backgroundImage = 'url(\'' + backgroundImages[backgroundImageIndex] + '\')';
+        }
+
+        setInterval(nextBackgroundImage, 10000);
+        nextBackgroundImage();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="background"></div>
+    <div id="title">
+      <h1>Digital Skills Observatory</h1>
+      <h2>Tracking the effect of Digital Skills on Digital Financial Services in Kenya</h2>
+    </div>
+    <ul id="links">
+      <li><a href="http://mzl.la/dso">Blog</a></li>
+      <li><a href="https://github.com/MozillaFoundation/digital-skills-observatory">The project</a></li>
+      <li><a href="https://github.com/MozillaFoundation/digital-skills-observatory/blob/master/questions.md">Research questions</a></li>
+      <li><a href="https://github.com/MozillaFoundation/digital-skills-observatory/blob/master/README.md">Research methods</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/18GXkDPQedFEeTVBxajkzRBoAyUYST3pfIW-z-fQiX74/edit#gid=989915141">Timeline</a></li>
+      <!-- <li><a href="#">Curriculum </a></li> -->
+    </ul>
+  </body>
+</html>
