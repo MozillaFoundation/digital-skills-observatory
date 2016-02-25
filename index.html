@@ -20,6 +20,12 @@
 
         var backgroundImageIndex = Math.floor(Math.random()*backgroundImages.length);
 
+        backgroundImages.forEach(function (url) {
+          // preload images!
+          var image = new Image();
+          image.src = url;
+        });
+
         function nextBackgroundImage() {
           backgroundImageIndex = (backgroundImageIndex + 1) % backgroundImages.length;
           backgroundDiv.style.backgroundImage = 'url(\'' + backgroundImages[backgroundImageIndex] + '\')';
