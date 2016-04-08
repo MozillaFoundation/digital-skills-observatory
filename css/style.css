@@ -36,6 +36,10 @@ section.title .content {
   font-size: 1.2em;
 }
 
+section:nth-child(n+3) {
+  padding: 2em 0;
+}
+
 section:nth-child(3n+1) {
   background: #576d8d;
   color: white;
@@ -65,7 +69,8 @@ section:last-child {
 
 section:nth-child(3) {
   text-align: center;
-  font-size: 1.5em;
+  font-style: italic;
+  font-size: 1.25em;
 }
 
 section .content {
