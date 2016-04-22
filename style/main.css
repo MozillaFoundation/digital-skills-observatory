@@ -1,0 +1,310 @@
+/*
+  Edited     : Apr 22, 2016
+  License    : MPL2
+  Authors    : Walter Loso and Bobby Richter
+*/
+
+@viewport {
+  width: device-width;
+}
+ 
+@-ms-viewport {
+  width: device-width;
+}
+ 
+/*--------------Body & Structure---------------------*/
+
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: white;
+  font-size: 12pt;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 200;
+  background: black;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/*-----------------Links & Images-----------------*/
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.button {
+  border: 1px solid #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  transition: background-color .15s, color .15s;
+}
+
+a.read-more {
+  text-transform: uppercase;
+  font-style: italic;
+  border: 1px solid white;
+  padding: 0 5px;
+  margin: 0 0;
+  position: relative;
+  transition: background-color .15s, color .15s;
+}
+
+a.read-more:hover {
+  text-decoration: none;
+}
+
+/*--------------Mozilla Logo----------------------*/
+
+.mozilla-logo {
+  display: block;
+  position: absolute;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  display: inline-block;
+  background: url(../images/mozilla.svg) no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 26px;
+  opacity: 0.5;
+  -webkit-transition: opacity .15s;
+  transition: opacity .15s;
+  z-index: 10;
+  right: 1em;
+  top: 1em;
+}
+
+.mozilla-logo:hover {
+  opacity: .8;
+}
+
+/*--------------Sections----------------------*/
+
+section p {
+  display: block;
+  line-height: 1.5em;
+}
+
+section {
+  padding: 2em 0;
+  background: #576d8d;
+  color: white;
+}
+
+section:nth-of-type(1), section:nth-of-type(3), section:nth-of-type(6) {
+  background: #f18c8c;
+}
+
+section:nth-of-type(2), section:nth-of-type(5) {
+  background: #9ab49a;
+}
+
+section.description-text p {
+  line-height: 2em;
+}
+
+section.description-text {
+  background: #f4eee6;
+  color: black;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.25em;
+}
+
+section:last-child {
+  background: #4d4d4d;
+  color: white;
+  padding: 2em 0;
+  text-align: center;
+}
+
+section .content {
+  padding: 2em 250px;
+}
+
+section .content:after {
+  display: block;
+  content: ' ';
+  clear: both;
+}
+
+section .content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+section .content ul li *:nth-child(1){
+  margin-left: .5em;
+}
+
+section .content .left {
+  float: left;
+}
+
+section .content .right {
+  float: right;
+}
+
+section .half, section .half {
+  width: 50%;
+}
+
+/*--------------Parallax----------------------*/
+.parallax-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+}
+
+.parallax-layer {
+  transform-origin-x: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.parallax-spacer {
+  padding: 100vh 0;
+}
+
+.parallax-layer .back {
+  transform: translateZ(-100px);
+}
+
+/*--------------Title Section----------------------*/
+
+section.title {
+  height: 600px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.title .content {
+  font-weight: 100;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.title {
+  color: white;
+}
+
+.title .parallax-container {
+  z-index: 0;
+}
+
+.title .flex-container {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .7) 100%);
+}
+
+.title h1, .title h2 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 200;
+  display: block;
+}
+
+.title .line {
+  height: 1px;
+  margin: 2em 100px;
+  width: 300px;
+  background: white;
+  margin-top: 1.5em;
+}
+
+.title h1 {
+  font-weight: 200;
+  font-size: 5em;
+  text-shadow: 1px 1px 1px black;
+}
+
+.title h2 {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+.background-image-container {
+  position: absolute;
+  transition: background-image 5s;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.title .attribution {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-size: .8em;
+  z-index: 11;
+  font-style: italic;
+  font-weight: 200;
+  opacity: .7;
+}
+
+/*--------------Previous Research Section----------------------*/
+#previous-research-section a.button:hover {
+  color: #9ab49a;
+  background: white;
+}
+
+/*--------------News Section----------------------*/
+#news-section a.button:hover, #news-section a.read-more:hover {
+  color: #576d8d;
+  background: white;
+}
+
+#news-section .item {
+  margin-bottom: 3em;
+}
+
+/*--------------Teams Section----------------------*/
+
+#teams-section .community ul {
+  width: 250px;
+}
+
+/*--------------Documentation Section----------------------*/
+
+.documentation li {
+  width: 100%;
+}
