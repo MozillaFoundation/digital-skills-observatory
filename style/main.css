@@ -76,6 +76,32 @@ a.read-more:hover {
   text-decoration: none;
 }
 
+/*--------------Special Effects----------------------*/
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+.fadein {
+  opacity: 0;
+  animation: fadeIn 1s ease-in;
+  animation-duration: 0.3s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+#title .title {
+  animation-delay: 0.3s;
+}
+
+#title .subtitle {
+  animation-delay: 0.5s;
+}
+
+#title .line {
+  animation-delay: 0.4s; 
+}
+
 /*--------------Mozilla Logo----------------------*/
 
 .mozilla-logo {
@@ -143,7 +169,8 @@ section:last-child {
 }
 
 section .content {
-  padding: 2em 250px;
+  width: 700px;
+  margin: 0 auto;
 }
 
 section .content:after {
@@ -169,7 +196,7 @@ section .content .right {
   float: right;
 }
 
-section .half, section .half {
+section .half {
   width: 50%;
 }
 
@@ -204,7 +231,7 @@ section .half, section .half {
 
 /*--------------Title Section----------------------*/
 
-section.title {
+#title {
   height: 600px;
   padding: 0;
   position: relative;
@@ -212,27 +239,27 @@ section.title {
   background: transparent;
 }
 
-.title .content {
+#title .content {
   font-weight: 100;
   text-align: center;
   font-size: 1.2em;
 }
 
-.title {
+#title {
   color: white;
 }
 
-.title .parallax-container {
+#title .parallax-container {
   z-index: 0;
 }
 
-.title .flex-container {
+#title .flex-container {
   position: relative;
   z-index: 1;
   background: linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .7) 100%);
 }
 
-.title h1, .title h2 {
+#title h1, #title h2 {
   text-align: center;
   margin: 0;
   padding: 0;
@@ -242,7 +269,7 @@ section.title {
   display: block;
 }
 
-.title .line {
+#title .line {
   height: 1px;
   margin: 2em 100px;
   width: 300px;
@@ -250,13 +277,13 @@ section.title {
   margin-top: 1.5em;
 }
 
-.title h1 {
+#title h1 {
   font-weight: 200;
   font-size: 5em;
   text-shadow: 1px 1px 1px black;
 }
 
-.title h2 {
+#title h2 {
   font-weight: 300;
   font-style: italic;
   font-size: 1.5em;
@@ -270,7 +297,7 @@ section.title {
   height: 100%;
 }
 
-.title .attribution {
+#title .attribution {
   position: absolute;
   bottom: 1em;
   right: 1em;
@@ -307,4 +334,94 @@ section.title {
 
 .documentation li {
   width: 100%;
+}
+
+/*------------------Laptops&larger screens---------------------------*/
+
+@media (min-width: 979px) {
+  section .content {
+    width: 900px;
+  }
+}
+
+/*------------------Tablets--------------------------*/
+
+@media (max-width: 767px) {
+  section .content {
+    width: 700px;
+  }
+}
+
+/*-------------------small tablet---------------------------*/
+
+@media (min-width: 479px) and (max-width: 767px) {
+  #title .flex-container {
+    padding: 0 40px;
+    width: initial;
+  }
+
+  #title h1 {
+    font-size: 3em;
+  }
+
+  #title h2 {
+    font-size: 1.1em;
+  }
+
+  section .content {
+    width: 400px;
+  }
+  section .half {
+    width: 100%;
+  }
+}
+
+/*----------------SmartPhones----------------------*/
+
+/*------------Navigation-------------------*/
+
+@media (max-width: 479px) {
+  #title .flex-container {
+    padding: 0 20px;
+    width: initial;
+  }
+
+  #title h1 {
+    font-size: 3em;
+  }
+
+  #title h2 {
+    font-size: 1.1em;
+  }
+
+  section .content {
+    width: 300px;
+  }
+  section .half {
+    width: 100%;
+  }
+}
+
+/*----------------------Smallphones------------------------*/
+
+@media (max-width: 290px) {
+  #title .flex-container {
+    padding: 0 20px;
+    width: initial;
+  }
+
+  #title h1 {
+    font-size: 3em;
+  }
+
+  #title h2 {
+    font-size: 1.1em;
+  }
+
+  section .content {
+    width: 250px;
+  }
+  section .half {
+    width: 100%;
+  }
 }
