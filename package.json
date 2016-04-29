@@ -1,0 +1,24 @@
+{
+  "name": "digital-skills-observatory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "readBlog.js",
+  "dependencies": {},
+  "devDependencies": {
+    "request": "^2.72.0",
+    "xmlreader": "^0.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MozillaFoundation/digital-skills-observatory.git"
+  },
+  "author": "",
+  "license": "MPL2",
+  "bugs": {
+    "url": "https://github.com/MozillaFoundation/digital-skills-observatory/issues"
+  },
+  "homepage": "mozillafoundation.github.com/digital-skills-observatory#readme"
+}
