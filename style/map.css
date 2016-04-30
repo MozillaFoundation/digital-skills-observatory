@@ -1,0 +1,159 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font: 12pt 'Fira Sans';
+}
+
+#map-container {
+  position: relative;
+  margin: 0 auto;
+}
+
+#map-background {
+  width: 100%;
+}
+
+#map-background.off {
+  visibility: hidden;
+}
+
+.map-marker {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.map-marker::before {
+  position: absolute;
+  content: ' ';
+  border-radius: 8px;
+  width: 16px;
+  height: 16px;
+  background: rgb(0,0,0);
+  background: radial-gradient(ellipse at center, rgba(0,0,0,1) 34%,rgba(255,255,255,1) 35%,rgba(255,255,255,1) 54%,rgba(0,0,0,1) 55%, rgba(0,0,0,1) 100%);
+  z-index: 0;
+  opacity: 0.5;
+  transition: opacity .25s;
+}
+
+.map-marker:hover::before {
+  opacity: 1;
+}
+
+.map-marker .map-marker-title {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  z-index: 1;
+  transition: color .25s;
+}
+
+.map-marker:hover {
+  cursor: pointer;
+  z-index: 2;
+}
+
+.map-marker:hover .map-marker-title {
+  color: blue;
+}
+
+.map-marker .location-info {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s, visibility .25s;
+  width: 300px;
+  /*border-left: 1px solid rgba(0,0,0, 0.2);*/
+  /*background: linear-gradient(to bottom,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 50%);*/
+}
+
+.map-marker .location-info h2 {
+  /*border-bottom: 1px solid rgba(0,0,0, 0.2);*/
+  padding-left: .25em;
+  line-height: 1em;
+  margin: 1em 0;
+}
+
+.map-marker .location-info p {
+  padding-left: 1em;
+}
+
+.map-marker:hover .location-info {
+  opacity: 1;
+  visibility: visible;
+}
+
+.map-marker[data-name="nairobi"] {
+  left: 35%;
+  top: 61.5%;
+}
+
+.map-marker[data-name="nairobi"] .location-info {
+  top: -16em;
+  left: 1em;
+}
+
+.map-marker[data-name="kisumu"] {
+  left: 9.1%;
+  top: 49%;
+}
+
+.map-marker[data-name="kisumu"] .location-info {
+  top: -10em;
+  left: 8em;
+}
+
+.map-marker[data-name="vihiga"] {
+  left: 8.8%;
+  top: 47.1%;
+}
+
+.map-marker[data-name="vihiga"] .location-info {
+  top: -16em;
+  left: 8em;
+}
+
+.map-marker[data-name="vihiga"] .map-marker-title {
+  left: 20px;
+  top: -10px;
+}
+
+.map-marker[data-name="mombasa"] {
+  left: 71.2%;
+  top: 90.9%;
+}
+
+.map-marker[data-name="mombasa"] .location-info {
+  top: -20em;
+  left: -6em;
+}
+
+.map-marker[data-name="kilifi"] {
+  left: 74.2%;
+  top: 84.9%;
+}
+
+.map-marker[data-name="kilifi"] .location-info {
+  top: -20em;
+  left: -8em;
+}
+
+#map-marker-dotted-line {
+  position: absolute;
+  width: 5px;
+  background-image: radial-gradient(ellipse at center, rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 40%,rgba(255,0,0,0) 40%);
+  background-size: 5px 5px;
+  background-repeat: no-repeat repeat;
+  transform-origin: 0 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#map-marker-dotted-line.on {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .25s, visibility .25s;
+  transition-delay: .2s;
+}

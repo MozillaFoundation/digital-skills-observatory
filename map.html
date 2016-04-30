@@ -5,149 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map - Digital Skills Observatory</title>
     <!-- <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700italic,700,500italic,500,400italic,300italic,300' rel='stylesheet' type='text/css'> -->
-    <style>
-      html, body {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        font: 12pt 'Fira Sans';
-      }
-
-      #map-container {
-        position: relative;
-        margin: 0 auto;
-      }
-
-      #map-background {
-        width: 100%;
-      }
-
-      #map-background.off {
-        visibility: hidden;
-      }
-
-      .map-marker {
-        position: absolute;
-      }
-
-      .map-marker::before {
-        position: absolute;
-        content: ' ';
-        border-radius: 8px;
-        width: 16px;
-        height: 16px;
-        background: rgb(0,0,0);
-        background: radial-gradient(ellipse at center, rgba(0,0,0,1) 34%,rgba(255,255,255,1) 35%,rgba(255,255,255,1) 54%,rgba(0,0,0,1) 55%, rgba(0,0,0,1) 100%);
-        z-index: 0;
-        opacity: 0.5;
-        transition: opacity .25s;
-      }
-
-      .map-marker:hover::before {
-        opacity: 1;
-      }
-
-      .map-marker .map-marker-title {
-        position: absolute;
-        left: 16px;
-        top: 8px;
-        z-index: 1;
-        transition: color .25s;
-      }
-
-      .map-marker:hover {
-        cursor: pointer;
-      }
-
-      .map-marker:hover .map-marker-title {
-        color: blue;
-      }
-
-      .map-marker[data-name="nairobi"] {
-        left: 35%;
-        top: 61.5%;
-      }
-
-      .map-marker[data-name="kisumu"] {
-        left: 9.1%;
-        top: 49%;
-      }
-
-      .map-marker[data-name="vihiga"] {
-        left: 8.8%;
-        top: 47.1%;
-      }
-
-      .map-marker[data-name="vihiga"] .map-marker-title {
-        left: 20px;
-        top: -10px;
-      }
-
-      .map-marker[data-name="mombasa"] {
-        left: 71.2%;
-        top: 90.9%;
-      }
-
-      .map-marker[data-name="kilifi"] {
-        left: 74.2%;
-        top: 84.9%;
-      }
-    </style>
+    <link rel="stylesheet" href="style/map.css" type="text/css">
+    <script type="text/javascript" src="js/map.js"></script>
   </head>
   <body>
     <div id="map-container">
       <img id="map-background" hidden src="images/kenya.png">
-      <div class="map-marker" data-name="nairobi"><div class="map-marker-title">Nairobi</div></div>
-      <div class="map-marker" data-name="kisumu"><div class="map-marker-title">Kisumu</div></div>
-      <div class="map-marker" data-name="vihiga"><div class="map-marker-title">Vihiga</div></div>
-      <div class="map-marker" data-name="mombasa"><div class="map-marker-title">Mombasa</div></div>
-      <div class="map-marker" data-name="kilifi"><div class="map-marker-title">Kilifi</div></div>
+      <div id="map-marker-dotted-line"></div>
+      <div class="map-marker" data-name="nairobi">
+        <div class="map-marker-title">Nairobi</div>
+        <div class="location-info">
+          <h2>Nairobi</h2>
+          <p><strong>Participants:</strong> 15</p>
+          <p><strong>Intervention Attendance:</strong> 73%</p>
+          <p><strong>Challenges:</strong></p>
+          <ul>
+            <li>Anxiety about language, literacy, and formality of interventions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map-marker" data-name="kisumu">
+        <div class="map-marker-title">Kisumu</div>
+        <div class="location-info">
+          <h2>Kisumu</h2>
+          <p><strong>Participants:</strong> 20</p>
+          <p><strong>Intervention Attendance:</strong> 60%</p>
+          <p><strong>Challenges:</strong> No pattern.</p>
+        </div>
+      </div>
+      <div class="map-marker" data-name="vihiga">
+        <div class="map-marker-title">Vihiga</div>
+        <div class="location-info">
+          <h2>Vihiga</h2>
+          <p><strong>Participants:</strong> 21</p>
+          <p><strong>Intervention Attendance:</strong> 52%</p>
+          <p><strong>Challenges:</strong></p>
+          <ul>
+            <li>Long distance to travel from wide rural area to interventions</li>
+            <li>Time and money to attend interventions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map-marker" data-name="mombasa">
+        <div class="map-marker-title">Mombasa</div>
+        <div class="location-info">
+          <h2>Mombasa</h2>
+          <p><strong>Participants:</strong> 19</p>
+          <p><strong>Intervention Attendance:</strong> 63%</p>
+          <p><strong>Challenges:</strong> No pattern.</p>
+        </div>
+      </div>
+      <div class="map-marker" data-name="kilifi">
+        <div class="map-marker-title">Kilifi</div>
+        <div class="location-info">
+          <h2>Kilifi</h2>
+          <p><strong>Participants:</strong> 22</p>
+          <p><strong>Intervention Attendance:</strong> 59%</p>
+          <p><strong>Challenges:</strong></p>
+          <ul>
+            <li>Long distance to travel from wide rural area to interventions</li>
+            <li>Anxiety about language, literacy, and formality of interventions</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <script>
-      (function () {
-        var mapContainer = document.querySelector('#map-container');
-        var mapBackground = document.querySelector('#map-background');
-
-        document.addEventListener('DOMContentLoaded', function (e) {
-          var mapWidth = 0;
-          var mapHeight = 0;
-          var aspectRatio, inverseAspectRatio;
-
-          function resizeMap(e) {
-            var imaginaryImageHeight = window.innerWidth/aspectRatio;
-            var imaginaryImageWidth = window.innerHeight/aspectRatio;
-
-            if (window.innerHeight < imaginaryImageHeight) {
-              mapHeight = window.innerHeight;
-              mapWidth = mapHeight * aspectRatio;
-            }
-            else {
-              mapWidth = window.innerWidth;
-              mapHeight = mapWidth * (1/aspectRatio);
-            }
-
-            mapContainer.style.width = mapWidth + 'px';
-            mapContainer.style.height = mapHeight + 'px';
-          }
-
-          function ready() {
-            aspectRatio = mapBackground.width/mapBackground.height;
-            inverseAspectRatio = mapBackground.height/mapBackground.width;
-            resizeMap();
-            mapBackground.hidden = false;
-            window.addEventListener('resize', resizeMap);
-          }
-
-          // Wait for the image to actually load
-          if (mapBackground.width === 0 || mapBackground.height === 0) {
-            mapBackground.onload = ready;
-          }
-          else {
-            ready();
-          }
-        });
-      })();
-    </script>
   </body>
 </html>
