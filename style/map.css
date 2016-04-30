@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-  font: 12pt 'Fira Sans';
+  font: 10pt 'Fira Sans';
 }
 
 #map-container {
@@ -65,12 +65,9 @@ html, body {
   visibility: hidden;
   transition: opacity .25s, visibility .25s;
   width: 300px;
-  /*border-left: 1px solid rgba(0,0,0, 0.2);*/
-  /*background: linear-gradient(to bottom,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 50%);*/
 }
 
 .map-marker .location-info h2 {
-  /*border-bottom: 1px solid rgba(0,0,0, 0.2);*/
   padding-left: .25em;
   line-height: 1em;
   margin: 1em 0;
@@ -136,7 +133,7 @@ html, body {
 }
 
 .map-marker[data-name="kilifi"] .location-info {
-  top: -20em;
+  top: -22em;
   left: -8em;
 }
 
@@ -154,6 +151,22 @@ html, body {
 #map-marker-dotted-line.on {
   opacity: 1;
   visibility: visible;
-  transition: opacity .25s, visibility .25s;
-  transition-delay: .2s;
+  transition: opacity .25s, visibility .25s, height .25s;
+  transition-timing-function: ease-in-out, ease-in-out, linear;
+  transition-delay: .2s, .2s, 0;
+}
+
+.location-info *:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 400px), (max-height: 500px) {
+  body {
+    font-size: 8pt;
+  }
+
+  .map-marker .location-info {
+    width: 200px;
+  }
 }

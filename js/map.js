@@ -32,6 +32,8 @@
       mapBackground.hidden = false;
       window.addEventListener('resize', resizeMap);
 
+      var mapMarketDottedLineTimeout;
+
       Array.prototype.forEach.call(document.querySelectorAll('.map-marker'), function (mapMarkerElement) {
         var locationInfoElement = mapMarkerElement.querySelector('.location-info');
         mapMarkerElement.addEventListener('mouseenter', function (e) {
@@ -39,17 +41,35 @@
           var mapMarkerElementRect = mapMarkerElement.getBoundingClientRect();
           var locationInfoElementRect = locationInfoElement.getBoundingClientRect();
 
-          var w = locationInfoElementRect.left - mapMarkerElementRect.left;
-          var h = locationInfoElementRect.top - mapMarkerElementRect.top + locationInfoElementRect.height * .2;
-          var magnitude = Math.sqrt(w*w+h*h);
-          var angle = Math.atan2(-w, h);
+          var w, h, angle, magnitude;
+
+          if (locationInfoElementRect.left < mapMarkerElementRect.left && locationInfoElementRect.bottom < mapMarkerElementRect.top) {
+            w = locationInfoElementRect.left - mapMarkerElementRect.left + locationInfoElementRect.width * .2;
+            h = locationInfoElementRect.bottom - mapMarkerElementRect.top;
+          }
+          else {
+            w = locationInfoElementRect.left - mapMarkerElementRect.left;
+            h = locationInfoElementRect.top - mapMarkerElementRect.top + locationInfoElementRect.height * .5;
+          }
+
+          w -= mapMarkerElementRect.width / 2;
+          h -= mapMarkerElementRect.height / 2;
+
+          magnitude = Math.sqrt(w*w+h*h);
+          angle = Math.atan2(-w, h);
 
           mapMarkerDottedLine.style.top = (mapMarkerElementRect.top - mapRect.top + mapMarkerElementRect.height / 2) + 'px';
           mapMarkerDottedLine.style.left = (mapMarkerElementRect.left - mapRect.left + mapMarkerElementRect.width / 2) + 'px';
           mapMarkerDottedLine.style.transform = 'rotate(' + angle + 'rad)';
 
-          mapMarkerDottedLine.style.height = magnitude + 'px';
-          mapMarkerDottedLine.classList.add('on');
+          mapMarkerDottedLine.classList.remove('on');
+          mapMarkerDottedLine.style.height = '0px';
+
+          clearTimeout(mapMarketDottedLineTimeout);
+          mapMarketDottedLineTimeout = setTimeout(function () {
+            mapMarkerDottedLine.classList.add('on');
+            mapMarkerDottedLine.style.height = magnitude + 'px';
+          }, 50);
         });
         mapMarkerElement.addEventListener('mouseleave', function (e) {
           mapMarkerDottedLine.classList.remove('on');
