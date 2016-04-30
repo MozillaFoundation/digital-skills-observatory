@@ -72,7 +72,14 @@
           }, 50);
         });
         mapMarkerElement.addEventListener('mouseleave', function (e) {
+          clearTimeout(mapMarketDottedLineTimeout);
           mapMarkerDottedLine.classList.remove('on');
+          mapMarkerDottedLine.style.height = '0px';
+        });
+        window.addEventListener('mouseleave', function (e) {
+          clearTimeout(mapMarketDottedLineTimeout);
+          mapMarkerDottedLine.classList.remove('on');
+          mapMarkerDottedLine.style.height = '0px';
         });
       });
     }

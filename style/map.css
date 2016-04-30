@@ -4,6 +4,8 @@ html, body {
   height: 100%;
   width: 100%;
   font: 10pt 'Fira Sans';
+  background: transparent;
+  overflow: hidden;
 }
 
 #map-container {
