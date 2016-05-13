@@ -200,6 +200,15 @@ section .half {
   width: 50%;
 }
 
+section .content img.full {
+  width: 100%;
+}
+
+section .content img.frame {
+  padding: 2em;
+  box-sizing: border-box;
+}
+
 /*--------------Parallax----------------------*/
 .parallax-container {
   position: absolute;
