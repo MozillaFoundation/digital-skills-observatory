@@ -4,6 +4,8 @@ A year long experimental research project in Kenya, during which we will follow 
 To learn more, check out mzl.la/dso and our research blog. 
 
 ### Project Overview
-! [Project Overview] (DSO simplified - New Page.png) 
+![Project Overview](program-structure.png) 
+
+
 ### Research Approach
 ![research approach](program-venn.png)
