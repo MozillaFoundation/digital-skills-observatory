@@ -345,6 +345,11 @@ section .content img.frame {
   width: 100%;
 }
 
+.documentation .research-questions ul {
+  list-style: initial;
+  padding-left: 2em;
+}
+
 /*------------------Laptops&larger screens---------------------------*/
 
 @media (min-width: 979px) {
