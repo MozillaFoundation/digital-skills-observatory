@@ -51,16 +51,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         itemElement.querySelector('h3 a').innerHTML = item.title;
         itemElement.querySelector('h3 a').href = item.link;
-        itemElement.querySelector('p.description').innerHTML = item.description;
-        itemElement.querySelector('a.read-more').href = item.link;
+        itemElement.querySelector('.description').innerHTML = item.description;
+        itemElement.querySelector('.read-more').href = item.link;
 
-        Array.prototype.forEach.call(itemElement.querySelectorAll('p.description img'), function (imageElement) {
+        Array.prototype.forEach.call(itemElement.querySelectorAll('.description img'), function (imageElement) {
           imageElement.parentNode.removeChild(imageElement);
         });
 
         itemElement.hidden = false;
         newsSectionContent.appendChild(itemElement);
       });
+
+      var bigReadMoreButton = newsSectionContent.querySelector('.big-read-more-button');
+      bigReadMoreButton.parentNode.appendChild(bigReadMoreButton);
     }
   };
 

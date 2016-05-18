@@ -333,6 +333,10 @@ section .content img.frame {
   margin-bottom: 3em;
 }
 
+#news-section .description {
+  margin-bottom: 1em;
+}
+
 /*--------------Teams Section----------------------*/
 
 #teams-section .community ul {
