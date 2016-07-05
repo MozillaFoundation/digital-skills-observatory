@@ -5,7 +5,7 @@
 3. Does limited [general] literacy impact the usage and adoption of smartphones and DFS?
 4. Who else uses the phone and for what purpose? Our general hypothesis is that smartphones are private and personal, but are there use case exceptions? What are the consequences on the usage of DFS?
 5. What is the route to discovery of DFS? What are the different channels?
-6. Are entertainment and social media interesting vehicules for learning and adopting DFS?
+6. Are entertainment and social media interesting vehicles for learning and adopting DFS?
 7. Is there a difference between the way men and women use DFS? What are the consequences of these differences?
 
 ### Skills
