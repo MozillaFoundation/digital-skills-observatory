@@ -1,6 +1,9 @@
 (function () {  
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  /*------------------- Prepare Header Background -------------------*/
+
   var backgroundDiv = document.querySelector('.background-image-container');
 
   var backgroundImages = [
@@ -27,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
   setInterval(nextBackgroundImage, 10000);
   nextBackgroundImage();
 
+
+  /*------------------- Prepare News Section -------------------*/
 
   var newsSectionContent = document.querySelector('#news-section > .content');
   var newsItemTemplate = newsSectionContent.querySelector('.template');

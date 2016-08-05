@@ -14,7 +14,6 @@
  
 /*--------------Body & Structure---------------------*/
 
-
 html, body {
   padding: 0;
   margin: 0;
@@ -60,6 +59,7 @@ a.button {
   color: #fff;
   display: inline-block;
   transition: background-color .15s, color .15s;
+  cursor: pointer;
 }
 
 a.read-more {
@@ -117,7 +117,6 @@ a.read-more:hover {
   width: 100px;
   height: 26px;
   opacity: 0.5;
-  -webkit-transition: opacity .15s;
   transition: opacity .15s;
   z-index: 10;
   right: 1em;
@@ -141,14 +140,6 @@ section {
   color: white;
 }
 
-section:nth-of-type(1), section:nth-of-type(3), section:nth-of-type(6) {
-  background: #f18c8c;
-}
-
-section:nth-of-type(2), section:nth-of-type(5) {
-  background: #9ab49a;
-}
-
 section.description-text p {
   line-height: 2em;
 }
@@ -159,13 +150,6 @@ section.description-text {
   text-align: center;
   font-style: italic;
   font-size: 1.25em;
-}
-
-section:last-child {
-  background: #4d4d4d;
-  color: white;
-  padding: 2em 0;
-  text-align: center;
 }
 
 section .content {
@@ -317,7 +301,86 @@ section .content img.frame {
   opacity: .7;
 }
 
+/*--------------Jisort Section----------------------*/
+#jisort {
+  background: url('../images/jisort.png');
+  background-size: auto 150%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#jisort::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  content: ' ';
+  background: rgba(0,0,0, 0.6);
+  z-index: 0;
+}
+
+#jisort .content {
+  z-index: 1;
+  position: relative;
+}
+
+#jisort .img-container {
+  margin-top: 1.5em;
+  padding: 0 10em;
+  box-sizing: border-box;
+}
+
+#jisort .img-container img {
+  width: 100%;
+}
+
+#jisort a.button:hover {
+  color: black;
+  background: white;
+}
+
+/*--------------Curriculum Section----------------------*/
+#curriculum {
+  background: #576d8d;
+}
+
+#curriculum a.button:hover {
+  color: #576d8d;
+  background: white;
+}
+
+
+/*--------------DSO Description Section----------------------*/
+#dso-description {
+  background: #f18c8c;
+}
+
+#dso-description .place {
+  font-style: italic;
+}
+
+#dso-description a.button:hover {
+  color: #f18c8c;
+  background: white;
+}
+
+/*--------------Progress Section----------------------*/
+#progress {
+  background: #f18c8c;
+}
+
+#dso-description a.button:hover {
+  color: #f18c8c;
+  background: white;
+}
+
 /*--------------Previous Research Section----------------------*/
+#previous-research-section {
+  background: #9ab49a;
+}
+
 #previous-research-section a.button:hover {
   color: #9ab49a;
   background: white;
@@ -345,13 +408,30 @@ section .content img.frame {
 
 /*--------------Documentation Section----------------------*/
 
-.documentation li {
+#documentation {
+  background: #f18c8c;
+}
+
+#documentation li {
   width: 100%;
 }
 
-.documentation .research-questions ul {
+#documentation .research-questions ul {
   list-style: initial;
   padding-left: 2em;
+}
+
+/*--------------Footer Section----------------------*/
+#footer {
+  background: #4d4d4d;
+  color: white;
+  padding: 2em 0;
+  text-align: center;
+}
+
+#footer a {
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /*------------------Laptops&larger screens---------------------------*/
