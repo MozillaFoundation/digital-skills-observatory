@@ -80,62 +80,75 @@
     <section id="progress">
       <div class="content">
         <h2>Project Structure and Progress</h2>
+        <p>The Digital Skills Observatory includes 12 months of interviews, workshops, and software prototypes, focusing on <strong><em>150 first-time smartphone users</em></strong> between <strong><em>18 and 35 years of age</em></strong> living in <strong><em>urban, peri-urban, and rural</em></strong> areas, that earn <strong><em>less than 5 USD per day</em></strong>.</p>
+        <p>To observe any effects interventions have on smartphone usage, these 150 people are split into two groups according to their exposure to interventions:</p>
         <div id="progress-diagram">
-          <div class="container control">
-            <h3>Control Group</h3>
-            <a class="segment interview">Interview 1</a>
-            <a class="segment interview">Interview 2</a>
-            <a class="segment"></a>
-            <a class="segment interview">Interview 3</a>
-            <a class="segment"></a>
-            <a class="segment"></a>
-            <a class="segment interview">Interview 4</a>
-            <a class="segment"></a>
-            <a class="segment"></a>
-            <a class="segment interview">Interview 5</a>
-            <a class="segment"></a>
-            <a class="segment interview">Interview 6</a>
+          <div class="row">
+            <div class="container control">
+              <h3>Control Group</h3>
+            </div>
+            <div class="container treatment">
+              <h3>Treatment Group</h3>
+            </div>
           </div>
-          <div class="container treatment">
-            <h3>Treatment Group</h3>
-            <a class="segment interview">Interview 1</a>
-            <a class="segment interview">Interview 2</a>
-            <a href="#curriculum" class="segment workshop">Workshop 1</a>
-            <a class="segment interview">Interview 3</a>
-            <a href="#curriculum" class="segment workshop">Workshop 2</a>
-            <a href="#jisort" class="segment software">Software 1</a>
-            <a class="segment interview">Interview 4</a>
-            <a href="#curriculum" class="segment workshop">Workshop 3</a>
-            <a class="segment software">Software 2</a>
-            <a class="segment interview">Interview 5</a>
-            <a href="#curriculum" class="segment workshop">Workshop 4</a>
-            <a class="segment interview">Interview 6</a>
-          </div>
-          <div class="container descriptions">
-            <h3>&nbsp;</h3>
-            <div class="segment description">Baseline</div>
-            <div class="segment description">Social Media</div>
-            <div class="segment description">The Smartphone Ecosystem</div>
-            <div class="segment description">LOL!</div>
-            <div class="segment description">All About Accounts</div>
-            <div class="segment description">Jisort! Android Tutorial App Prototype</div>
-            <div class="segment description">LOL!</div>
-            <div class="segment description">Exploring, Searching, and Downloading</div>
-            <div class="segment description">TBD</div>
-            <div class="segment description">TBD</div>
-            <div class="segment description">TBD</div>
-            <div class="segment description">TBD</div>
+          <div class="row">
+            <div class="container control">
+              <a class="segment interview">Interview 1</a>
+              <a class="segment interview">Interview 2</a>
+              <a class="segment"></a>
+              <a class="segment interview">Interview 3</a>
+              <a class="segment"></a>
+              <a class="segment"></a>
+              <a class="segment interview">Interview 4</a>
+              <a class="segment"></a>
+              <a class="segment marker">Current Progress</a>
+              <a class="segment"></a>
+              <a class="segment interview">Interview 5</a>
+              <a class="segment"></a>
+              <a class="segment interview">Interview 6</a>
+            </div>
+            <div class="container treatment">
+              <a class="segment interview">Interview 1</a>
+              <a class="segment interview">Interview 2</a>
+              <a href="#curriculum" class="segment workshop">Workshop 1</a>
+              <a class="segment interview">Interview 3</a>
+              <a href="#curriculum" class="segment workshop">Workshop 2</a>
+              <a href="#jisort" class="segment software">Software 1</a>
+              <a class="segment interview">Interview 4</a>
+              <a href="#curriculum" class="segment workshop">Workshop 3</a>
+              <a class="segment marker">Current Progress</a>
+              <a class="segment software">Software 2</a>
+              <a class="segment interview">Interview 5</a>
+              <a href="#curriculum" class="segment workshop">Workshop 4</a>
+              <a class="segment interview">Interview 6</a>
+            </div>
+            <div class="container descriptions">
+              <div class="segment description">Baseline</div>
+              <div class="segment description">Social Media &amp; Accounts</div>
+              <div class="segment description">The Smartphone Ecosystem</div>
+              <div class="segment description">Apps</div>
+              <div class="segment description">All About Accounts</div>
+              <div class="segment description">Jisort! Android Tutorial App Prototype</div>
+              <div class="segment description">Data Privacy</div>
+              <div class="segment description">Exploring, Searching, and Downloading</div>
+              <div class="segment description marker"></div>
+              <div class="segment description">TBD</div>
+              <div class="segment description">TBD</div>
+              <div class="segment description">TBD</div>
+              <div class="segment description">TBD</div>
+            </div>
           </div>
         </div>
         <script>
           (function (){
             var diagram = document.querySelector('#progress-diagram');
-            var control = diagram.querySelector('.control');
-            var treatment = diagram.querySelector('.treatment');
+            var control = diagram.querySelector('.row:nth-of-type(2) .control');
+            var treatment = diagram.querySelector('.row:nth-of-type(2) .treatment');
             var descriptions = diagram.querySelectorAll('.descriptions > div');
 
             function rollThrough (array) {
               Array.prototype.forEach.call(array, function (a, index) {
+
                 if (!(a.classList.contains('workshop') || a.classList.contains('software') || a.classList.contains('interview'))) {
                   return;
                 }
@@ -306,6 +319,6 @@
       <div class="content">
         The Digital Skills Observatory project is conducted by <br/>the <a href="https://mozilla.org">Mozilla Foundation</a> and <a href="https://www.digitaldividedata.com">Digital Divide Data</a> in partnership with the <a href="https://www.gatesfoundation.org">Gates Foundation</a>.
       </div>
-    </footer>
+    </section>
   </body>
 </html>

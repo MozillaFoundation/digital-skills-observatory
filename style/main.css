@@ -366,38 +366,43 @@ section .content img.frame {
   background: white;
 }
 
-#dso-description #par-diagram > div {
+#par-diagram > div {
   padding: .25em;
   position: relative;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
-#dso-description #par-diagram > div:hover {
-  font-weight: bold;
-  font-style: italic;
-}
-
-#dso-description #par-diagram > div > div {
+#par-diagram > div > div {
   padding: .5em;
+  box-sizing: border-box;
 }
 
-#dso-description #par-diagram .name {
+#par-diagram .name,
+#par-diagram .description {
+  transition: background 0.15s;
+}
+
+#par-diagram .name {
   width: 150px;
   display: inline-block;
   position: absolute;
 }
 
-#dso-description #par-diagram .description {
+#par-diagram .description {
   margin-left: 150px;
   right: 0;
 }
 
-#dso-description #par-diagram .p .description {
-  background: #576d8d;
+#par-diagram > div:hover .name {
+  font-weight: bold;
+  font-style: italic;
+  background: #9ab49a;
 }
 
-#dso-description #par-diagram .r .description {
-  background: #9ab49a;
+#par-diagram > div:hover .description {
+  background: #576d8d;
+  font-style: italic;
 }
 
 /*--------------Progress Section----------------------*/
@@ -411,28 +416,43 @@ section .content img.frame {
 }
 
 #progress-diagram {
+  width: 100%;
+}
+
+#progress-diagram .row {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+}
+
+#progress-diagram .row:nth-of-type(1) .container {
+  padding: 0;
+  margin: 0;
+}
+
+#progress-diagram .row:nth-of-type(1) .container h3 {
+  margin-bottom: 0;
+}
+
+#progress-diagram .container {
+  position: relative;
 }
 
 #progress-diagram .container.treatment,
 #progress-diagram .container.control {
-    width: 30%;
+  width: 30%;
+  z-index: 1;
 }
 
 #progress-diagram .container.descriptions {
-  width: 40%;
+  z-index: 0;
 }
 
 #progress-diagram .container {
   box-sizing: border-box;
   padding: .5em;
-  text-align: center;
+  padding-left: 0;
 }
 
 #progress-diagram .segment {
@@ -453,6 +473,28 @@ section .content img.frame {
   background: #576d8d;
   border-style: solid;
   cursor: pointer;
+}
+
+#progress-diagram .segment.marker {
+  height: 25px;
+  border: 0;
+  font-style: italic;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+#progress-diagram .segment.marker::before,
+#progress-diagram .segment.marker::after {
+  content: ' ';
+  display: block;
+  background: white;
+  height: 1px;
+  flex-grow: 2;
+  box-sizing: border-box;
+  margin: 0 3px;
 }
 
 #progress-diagram .segment.interview {
@@ -623,6 +665,40 @@ section .content img.frame {
   }
   section .half {
     width: 100%;
+  }
+
+  #progress-diagram .container {
+    padding: 0.1em;
+  }
+
+  #progress-diagram .segment {
+    font-size: .75em;
+    text-transform: none;
+    padding: 0.1em;
+  }
+
+  #progress-diagram .descriptions .segment {
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    transition: none;
+  }
+
+  #progress-diagram .segment.marker::before,
+  #progress-diagram .segment.marker::after {
+    display: none;
+  }
+
+  #par-diagram .name {
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  #par-diagram .name, #par-diagram .description {
+    display: block;
+    margin: 0;
+    position: static;
+    background: transparent !important;
   }
 }
 
