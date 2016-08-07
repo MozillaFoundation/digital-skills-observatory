@@ -326,13 +326,9 @@ section .content img.frame {
   position: relative;
 }
 
-#jisort .img-container {
-  margin-top: 1.5em;
-  padding: 0 10em;
-  box-sizing: border-box;
-}
-
-#jisort .img-container img {
+#jisort img {
+  margin-top: 1em;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -686,6 +682,10 @@ section .content img.frame {
 
   #progress-diagram .segment.marker::before,
   #progress-diagram .segment.marker::after {
+    display: none;
+  }
+
+  #jisort img {
     display: none;
   }
 
