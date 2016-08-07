@@ -38,8 +38,12 @@
         <p>150 first-time smartphone users in <a class="place" href="https://www.google.ca/maps/place/Kisumu,+Kenya">Kisumu</a>, <a class="place" href="https://www.google.ca/maps/place/Kilifi,+Kenya">Kilifi</a>, <a class="place" href="https://www.google.ca/maps/place/Mombasa,+Kenya">Mombasa</a>, <a class="place" href="https://www.google.ca/maps/place/Nairobi,+Kenya">Nairobi</a>, and <a class="place" href="https://www.google.ca/maps/place/Vihiga,+Kenya">Vihiga</a> have regular contact with the observatory's research team throughout 2016. Using a Participatory Action Research Model, periodic interview results drive iteration on <strong>6 interventions&mdash;software and curriculum designed to boost digital skills</strong>.</p>
 
         <a class="button" href="#progress">See Project Progress</a>
-
-        <img class="full frame" src="images/PAR-White.png">
+        <br /><br />
+        <div id="par-diagram">
+          <div class="p"><div class="name">Participatory</div><div class="description">Capacity-building, multi-disciplinary learning network</div></div>
+          <div class="a"><div class="name">Action</div><div class="description">Digital skills workshops and software</div></div>
+          <div class="r"><div class="name">Research</div><div class="description">Quantitative, ethnographic, &amp; open</div></div>
+        </div>
       </div>
     </section>
     <section id="jisort">
@@ -76,7 +80,81 @@
     <section id="progress">
       <div class="content">
         <h2>Project Structure and Progress</h2>
-        <img class="full frame" src="images/Program Structure-Light.png">
+        <div id="progress-diagram">
+          <div class="container control">
+            <h3>Control Group</h3>
+            <a class="segment interview">Interview 1</a>
+            <a class="segment interview">Interview 2</a>
+            <a class="segment"></a>
+            <a class="segment interview">Interview 3</a>
+            <a class="segment"></a>
+            <a class="segment"></a>
+            <a class="segment interview">Interview 4</a>
+            <a class="segment"></a>
+            <a class="segment"></a>
+            <a class="segment interview">Interview 5</a>
+            <a class="segment"></a>
+            <a class="segment interview">Interview 6</a>
+          </div>
+          <div class="container treatment">
+            <h3>Treatment Group</h3>
+            <a class="segment interview">Interview 1</a>
+            <a class="segment interview">Interview 2</a>
+            <a href="#curriculum" class="segment workshop">Workshop 1</a>
+            <a class="segment interview">Interview 3</a>
+            <a href="#curriculum" class="segment workshop">Workshop 2</a>
+            <a href="#jisort" class="segment software">Software 1</a>
+            <a class="segment interview">Interview 4</a>
+            <a href="#curriculum" class="segment workshop">Workshop 3</a>
+            <a class="segment software">Software 2</a>
+            <a class="segment interview">Interview 5</a>
+            <a href="#curriculum" class="segment workshop">Workshop 4</a>
+            <a class="segment interview">Interview 6</a>
+          </div>
+          <div class="container descriptions">
+            <h3>&nbsp;</h3>
+            <div class="segment description">Baseline</div>
+            <div class="segment description">Social Media</div>
+            <div class="segment description">The Smartphone Ecosystem</div>
+            <div class="segment description">LOL!</div>
+            <div class="segment description">All About Accounts</div>
+            <div class="segment description">Jisort! Android Tutorial App Prototype</div>
+            <div class="segment description">LOL!</div>
+            <div class="segment description">Exploring, Searching, and Downloading</div>
+            <div class="segment description">TBD</div>
+            <div class="segment description">TBD</div>
+            <div class="segment description">TBD</div>
+            <div class="segment description">TBD</div>
+          </div>
+        </div>
+        <script>
+          (function (){
+            var diagram = document.querySelector('#progress-diagram');
+            var control = diagram.querySelector('.control');
+            var treatment = diagram.querySelector('.treatment');
+            var descriptions = diagram.querySelectorAll('.descriptions > div');
+
+            function rollThrough (array) {
+              Array.prototype.forEach.call(array, function (a, index) {
+                if (!(a.classList.contains('workshop') || a.classList.contains('software') || a.classList.contains('interview'))) {
+                  return;
+                }
+
+                a.onmouseover = function () {
+                  descriptions[index].classList.add('show');
+                };
+
+                a.onmouseout = function () {
+                  descriptions[index].classList.remove('show');
+                }
+              });
+            }
+
+            rollThrough(control.querySelectorAll('a'));
+            rollThrough(treatment.querySelectorAll('a'));
+
+          })();
+        </script>
       </div>
     </section>
     <section id="teams-section">

@@ -366,14 +366,140 @@ section .content img.frame {
   background: white;
 }
 
+#dso-description #par-diagram > div {
+  padding: .25em;
+  position: relative;
+  cursor: pointer;
+}
+
+#dso-description #par-diagram > div:hover {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#dso-description #par-diagram > div > div {
+  padding: .5em;
+}
+
+#dso-description #par-diagram .name {
+  width: 150px;
+  display: inline-block;
+  position: absolute;
+}
+
+#dso-description #par-diagram .description {
+  margin-left: 150px;
+  right: 0;
+}
+
+#dso-description #par-diagram .p .description {
+  background: #576d8d;
+}
+
+#dso-description #par-diagram .r .description {
+  background: #9ab49a;
+}
+
 /*--------------Progress Section----------------------*/
 #progress {
   background: #f18c8c;
 }
 
-#dso-description a.button:hover {
+#progress a.button:hover {
   color: #f18c8c;
   background: white;
+}
+
+#progress-diagram {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#progress-diagram .container.treatment,
+#progress-diagram .container.control {
+    width: 30%;
+}
+
+#progress-diagram .container.descriptions {
+  width: 40%;
+}
+
+#progress-diagram .container {
+  box-sizing: border-box;
+  padding: .5em;
+  text-align: center;
+}
+
+#progress-diagram .segment {
+  width: 100%;
+  height: 50px;
+  border: 1px dashed white;
+  box-sizing: border-box;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .15s, color .15s;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#progress-diagram .segment.workshop {
+  background: #576d8d;
+  border-style: solid;
+  cursor: pointer;
+}
+
+#progress-diagram .segment.interview {
+  background: #f18c8c;
+  border-style: solid;
+  cursor: pointer;
+}
+
+#progress-diagram .segment.software {
+  background: #9ab49a;
+  border-style: solid;
+  cursor: pointer;
+}
+
+#progress-diagram .segment.workshop:hover {
+  background: white;
+  color: #576d8d;
+}
+
+#progress-diagram .segment.interview:hover {
+  background: white;
+  color: #f18c8c;
+}
+
+#progress-diagram .segment.software:hover {
+  background: white;
+  color: #9ab49a;
+}
+
+#progress-diagram .descriptions .segment {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  left: -30%;
+  transition: visibility .15s,  left .15s, opacity .15s;
+  border: 0;
+  text-align: left;
+  justify-content: flex-start;
+  font-style: italic;
+  text-transform: none;
+  padding-left: 1em;
+}
+
+#progress-diagram .descriptions .segment.show {
+  visibility: visible;
+  opacity: 1;
+  left: 0;
 }
 
 /*--------------Previous Research Section----------------------*/
