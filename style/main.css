@@ -678,6 +678,10 @@ section .content img.frame {
     width: 100%;
   }
 
+  .mozilla-logo {
+    width: 50px;
+  }
+
   #progress-diagram .container {
     padding: 0.1em;
   }
