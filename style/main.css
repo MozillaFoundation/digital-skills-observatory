@@ -127,6 +127,21 @@ a.read-more:hover {
   opacity: .8;
 }
 
+/*--------------Navigation----------------------*/
+#navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style: none;
+  z-index: 10;
+  font-size: .75em;
+}
+
+#navigation li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
 /*--------------Sections----------------------*/
 
 section p {
