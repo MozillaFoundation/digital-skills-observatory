@@ -1,5 +1,5 @@
 /*
-  Edited     : Apr 22, 2016
+  Edited     : Mar 21, 2017
   License    : MPL2
   Authors    : Walter Loso and Bobby Richter
 */
@@ -66,7 +66,7 @@ a.read-more {
   text-transform: uppercase;
   font-style: italic;
   border: 1px solid white;
-  padding: 0 5px;
+  padding: .5em 2em;
   margin: 0 0;
   position: relative;
   transition: background-color .15s, color .15s;
@@ -208,35 +208,6 @@ section .content img.frame {
   box-sizing: border-box;
 }
 
-/*--------------Parallax----------------------*/
-.parallax-container {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  height: 600px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  perspective: 1px;
-}
-
-.parallax-layer {
-  transform-origin-x: 100%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.parallax-spacer {
-  padding: 100vh 0;
-}
-
-.parallax-layer .back {
-  transform: translateZ(-100px);
-}
-
 /*--------------Title Section----------------------*/
 
 #title {
@@ -316,6 +287,52 @@ section .content img.frame {
   opacity: .7;
 }
 
+/*--------------Report Section----------------------*/
+#report {
+  background: #daa416;
+  color: #fff;
+  position: relative;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+#report::before {
+  position: absolute;
+  content: ' ';
+  background-image: url('../images/report-decoration-1.png');
+  background-size: contain;
+  right: 0px;
+  top: 30px;
+  left: 2em;
+  height: 15px;
+}
+
+#report::after {
+  position: absolute;
+  content: ' ';
+  background-image: url('../images/report-decoration-2.png');
+  background-size: contain;
+  background-position: right 0;
+  left: 0px;
+  bottom: 30px;
+  right: 2em;
+  height: 18px;
+}
+
+#report a.button:hover {
+  color: #daa416;
+  background: white;
+}
+
+#report h3 {
+  margin-bottom: .3em;
+}
+
+#report h4 {
+  margin-top: .3em;
+  color: #ddd;
+}
+
 /*--------------Jisort Section----------------------*/
 #jisort {
   background: url('../images/jisort.png');
@@ -360,6 +377,15 @@ section .content img.frame {
 #curriculum a.button:hover {
   color: #576d8d;
   background: white;
+}
+
+#curriculum h3 {
+  margin-bottom: .3em;
+}
+
+#curriculum h4 {
+  margin-top: .3em;
+  color: #ddd;
 }
 
 
@@ -438,12 +464,7 @@ section .content img.frame {
 }
 
 #progress-diagram .row:nth-of-type(1) .container {
-  padding: 0;
-  margin: 0;
-}
-
-#progress-diagram .row:nth-of-type(1) .container h3 {
-  margin-bottom: 0;
+  text-align: center;
 }
 
 #progress-diagram .container {
@@ -452,24 +473,26 @@ section .content img.frame {
 
 #progress-diagram .container.treatment,
 #progress-diagram .container.control {
-  width: 30%;
+  width: 200px;
   z-index: 1;
 }
 
 #progress-diagram .container.descriptions {
+  width: 200px;
   z-index: 0;
 }
 
 #progress-diagram .container {
   box-sizing: border-box;
-  padding: .5em;
-  padding-left: 0;
+  padding: 0;
+  padding-right: .5em;
 }
 
 #progress-diagram .segment {
+  font-size: .85em;
   width: 100%;
-  height: 50px;
-  border: 1px dashed white;
+  height: 2em;
+  border: .5px none white;
   box-sizing: border-box;
   margin: 5px 0;
   display: flex;
@@ -482,7 +505,7 @@ section .content img.frame {
 
 #progress-diagram .segment.workshop {
   background: #576d8d;
-  border-style: solid;
+  border-style: none;
   cursor: pointer;
 }
 
@@ -516,7 +539,7 @@ section .content img.frame {
 
 #progress-diagram .segment.software {
   background: #9ab49a;
-  border-style: solid;
+  border-style: none;
   cursor: pointer;
 }
 
@@ -547,6 +570,7 @@ section .content img.frame {
   font-style: italic;
   text-transform: none;
   padding-left: 1em;
+  height: unset;
 }
 
 #progress-diagram .descriptions .segment.show {
@@ -682,6 +706,15 @@ section .content img.frame {
     width: 50px;
   }
 
+  #progress-diagram .container.treatment,
+  #progress-diagram .container.control {
+    width: 80px;
+  }
+
+  #progress-diagram .container.descriptions {
+    width: 120px;
+  }
+
   #progress-diagram .container {
     padding: 0.1em;
   }
@@ -690,6 +723,7 @@ section .content img.frame {
     font-size: .75em;
     text-transform: none;
     padding: 0.1em;
+    margin: 3px 0;
   }
 
   #progress-diagram .descriptions .segment {
